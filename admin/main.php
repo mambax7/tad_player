@@ -85,7 +85,7 @@ function list_tad_player($pcsn = "")
 function list_tad_player_cate_tree($def_pcsn = "")
 {
     global $xoopsDB, $xoopsTpl;
-
+    $cate_count = array();
     $sql    = "select count(*),pcsn from " . $xoopsDB->prefix("tad_player") . " group by pcsn";
     $result = $xoopsDB->query($sql) or web_error($sql);
     while (list($count, $pcsn) = $xoopsDB->fetchRow($result)) {
